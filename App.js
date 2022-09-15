@@ -5,7 +5,8 @@ import {Base64Binary} from './utils/utils';
 import {fetch,bundleResourceIO,decodeJpeg} from '@tensorflow/tfjs-react-native'
 import {Dimensions} from 'react-native';
 import * as ImageManipulator from 'expo-image-manipulator';
-
+import { utils } from '@react-native-firebase/app';
+import storage from '@react-native-firebase/storage';
 import * as tf from '@tensorflow/tfjs';
 import logo from './assets/123.png'
 // import ImgToBase64 from 'react-native-image-base64';
@@ -64,7 +65,9 @@ useEffect(() => {
         // setModel(treemodel)
     getModel();
 }, []);
+const storedata=()=>{
 
+}
 const convertBase64ToTensor = async (base64) => {
     try {
 
@@ -189,15 +192,14 @@ async function predict() {
         cropPicture(selectedImage)
         // const base64 = await FileSystem.readAsStringAsync(selectedImage.localUri, { encoding: FileSystem.EncodingType.Base64 });
         // let base64String =await ImgToBase64.getBase64String(url)
-
         // const imgB64 = await FileSystem.read(selectedImage.localUri, "base64");
-// const imgB64 = await FileSystem.readAsStringAsync(selectedImage.localUri, {
-//     encoding: FileSystem.EncodingType.Base64,
-// });
-// const imgBuffer = tf.util.encodeString(imgB64, 'base64').buffer;
-// const raw = new Uint8Array(imgBuffer)  
-// const imageTensor = decodeJpeg(raw);
-// startPrediction(model,imageTensor)
+        // const imgB64 = await FileSystem.readAsStringAsync(selectedImage.localUri, {
+        //     encoding: FileSystem.EncodingType.Base64,
+        // });
+        // const imgBuffer = tf.util.encodeString(imgB64, 'base64').buffer;
+        // const raw = new Uint8Array(imgBuffer)  
+        // const imageTensor = decodeJpeg(raw);
+        // startPrediction(model,imageTensor)
         // const imgBuffer = tf.util.encodeString(imgB64, 'base64').buffer;
         // const raw = new Uint8Array(imgBuffer)
         // const imageTensor = decodeJpeg(raw);
